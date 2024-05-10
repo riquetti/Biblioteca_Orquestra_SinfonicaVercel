@@ -10,9 +10,13 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='emprestimos',
             name='tempo_duracao',
-            field=models.TimeField(blank=True, null=True),
+        ),
+        migrations.AddField(
+            model_name='emprestimos',
+            name='duracao_emprestimo',
+            field=models.DurationField(blank=True, null=True),
         ),
     ]
