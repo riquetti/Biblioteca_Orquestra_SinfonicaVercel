@@ -14,11 +14,12 @@ from .models import Categoria, Emprestimos, Livros
 
 def home(request):
     usuario_id = request.session.get('usuario')
+
     if usuario_id:  
         try:
             usuario = Usuario.objects.get(id=usuario_id)
             status_categoria = request.GET.get('cadastro_categoria')
-            livros = Livros.objects.filter(usuario=usuario)
+            livros = Livros.objects.filter(usuario=usuario).order_by('obra')
             total_livros = livros.count()
             form = CadastroLivro()
             form.fields['usuario'].initial = usuario_id
@@ -35,6 +36,9 @@ def home(request):
             arranjadores = Livros.objects.filter(usuario=usuario).values_list('arranjador', flat=True).distinct()
 
             # Aplica os filtros, se fornecidos na URL
+            livros = Livros.objects.filter(usuario=usuario)
+
+            # Aplica os filtros, se fornecidos na URL
             categoria_filtro = request.GET.get('categoria')
             obra_filtro = request.GET.get('obra')
             classificacao_filtro = request.GET.get('classificacao')
@@ -43,14 +47,25 @@ def home(request):
 
             if categoria_filtro:
                 livros = livros.filter(categoria=categoria_filtro)
+                # Se categoria foi filtrada, atualiza as obras disponíveis para essa categoria
+                obras = livros.values_list('obra', flat=True).distinct()
+                # Se obra não estiver na lista de obras disponíveis para a categoria, limpa o filtro de obra
+                if obra_filtro and obra_filtro not in obras:
+                    obra_filtro = None
+
             if obra_filtro:
                 livros = livros.filter(obra=obra_filtro)
+
             if classificacao_filtro:
                 livros = livros.filter(classificacao=classificacao_filtro)
+
             if compositor_filtro:
                 livros = livros.filter(compositor=compositor_filtro)
+
             if arranjador_filtro:
                 livros = livros.filter(arranjador=arranjador_filtro)
+
+
 
             return render(request, 'home.html', {
                 'livros': livros,
@@ -178,9 +193,10 @@ def alterar_livro(request):
     conteudo = request.POST.get('conteudo')
     edicao = request.POST.get('edicao')
     localizacao = request.POST.get('localizacao')
-    exemplares_disponiveis = request.POST.get('exemplares_disponiveis')
+    #exemplares_disponiveis = request.POST.get('exemplares_disponiveis')
     formato = request.POST.get('formato')
     observacao = request.POST.get('observacao')
+    observacoes_gerais = request.POST.get('observacoes_gerais')
 
     categoria_id = request.POST.get('categoria_id')
 
@@ -194,9 +210,10 @@ def alterar_livro(request):
         livro.conteudo = conteudo
         livro.edicao = edicao
         livro.localizacao = localizacao
-        livro.exemplares_disponiveis = exemplares_disponiveis
+        #livro.exemplares_disponiveis = exemplares_disponiveis
         livro.formato = formato
         livro.observacao = observacao
+        livro.observacoes_gerais = observacoes_gerais
 
         livro.categoria = categoria
         livro.save()

@@ -32,8 +32,9 @@ class Livros(models.Model):
     classificacao = models.CharField(max_length = 100, verbose_name='Classificação')
     conteudo = models.CharField(max_length = 100, verbose_name='Conteúdo')
     edicao = models.CharField(max_length = 100, verbose_name='Edição')
-    observacao = models.CharField(max_length = 100, blank = True, verbose_name='Observação')
+    observacao = models.CharField(max_length = 200, blank = True, verbose_name='Observação')
     formato = models.CharField(max_length = 100, verbose_name='Formato')
+    observacoes_gerais = models.CharField(max_length = 200, blank = True, verbose_name='Observações gerais')
     
 
 

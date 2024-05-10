@@ -82,8 +82,14 @@
           <input style="width: 40%;" class="form-control" type="texte" value="{{livro.observacao}}" name="observacao">
         </p>
 
+        <p>
+          <label>Observações Gerais:</label>
+          <input style="width: 40%;" class="form-control" type="texte" value="{{livro.observacoes_gerais}}" name="observacoes_gerais">
+        </p>
+
         <label>Categoria:</label>
         <select style="width: 20%;" class="form-control" name="categoria_id">
+          
           {% for i in categoria_livro%}
           
             {% if livro.categoria.nome == i.nome %}

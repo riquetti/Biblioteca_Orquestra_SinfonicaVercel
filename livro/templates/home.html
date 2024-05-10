@@ -5,11 +5,24 @@
 
 <div class="container text-center">
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;700&display=swap">
+
+  <style>
+      h1 {
+          font-family: 'Alegreya SC', serif; /* Use o nome da fonte correta aqui */
+          color: white;
+      }
+  </style>
+  
   <h1>Acervo de Partituras</h1>
+  
+
+  <hr style="background-color: white;">
+
 
   <!-- Filtro -->
-<form action="" method="GET" class="form-inline mb-2 ml-auto">
-  <label for="categoria" class="mr-2">Filtrar por Categoria:</label>
+<form action="" method="GET" class="form-inline mb-2 ml-auto  justify-content-between">
+  <label for="categoria" class="mr-2" style="color: white;"><strong>Filtrar por Categoria:</strong></label>
   <select name="categoria" id="categoria" class="form-control mr-2">
       <option value="">Todas as categorias</option>
       {% for categoria in categorias %}
@@ -17,7 +30,7 @@
       {% endfor %}
   </select>
 
-  <label for="obra" class="mr-2"> Obra:</label>
+  <label for="obra" class="mr-2" style="color: white;"> Obra:</label>
   <select name="obra" id="obra" class="form-control mr-2">
       <option value="">Todas as obras</option>
       {% for obra in obras %}
@@ -25,7 +38,7 @@
       {% endfor %}
   </select>
 
-  <label for="classificacao" class="mr-2"> Classificação:</label>
+  <label for="classificacao" class="mr-2" style="color: white;"> Classificação:</label>
   <select name="classificacao" id="classificacao" class="form-control mr-2">
       <option value="">Todas as classificações</option>
       {% for classificacao in classificacoes %}
@@ -33,7 +46,7 @@
       {% endfor %}
   </select>
 
-  <label for="compositor" class="mr-2"> Compositor:</label>
+  <label for="compositor" class="mr-2" style="color: white;"> Compositor:</label>
   <select name="compositor" id="compositor" class="form-control mr-2">
       <option value="">Todos os compositores</option>
       {% for compositor in compositores %}
@@ -41,7 +54,7 @@
       {% endfor %}
   </select>
 
-  <label for="arranjador" class="mr-2"> Arranjador:</label>
+  <label for="arranjador" class="mr-2" style="color: white;"> Arranjador:</label>
   <select name="arranjador" id="arranjador" class="form-control mr-2">
       <option value="">Todos os arranjadores</option>
       {% for arranjador in arranjadores %}
@@ -66,7 +79,8 @@
         {% for livro in livros %}
             <div class="col-md">
                 <div class="card" style="width: 18rem;">
-                    <div class="card-body">
+                  
+                    <div class="card-body" style="background-color: #8404D920; border: 1px solid rgb(255, 255, 255); box-shadow: 5px 5px 25px rgba(255, 255, 255, 0.5);">
 
                       <h5 class="card-title">{{ livro.obra}}</h5>
                       <p class="card-text"><strong>Categoria:</strong> {{ livro.categoria }}</p>
