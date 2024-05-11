@@ -58,7 +58,6 @@ class Emprestimos(models.Model):
     livro = models.ForeignKey(Livros, on_delete=models.DO_NOTHING)
     avaliacao = models.CharField(max_length=1, choices=choices, null=True, blank=True)
     localizacao_retirada = models.CharField(max_length = 100, verbose_name='Localização Retirada')
-    tempo_duracao = models.DurationField()
 
     def __str__(self) -> str:
         return f"{self.nome_emprestado} | {self.livro}"
