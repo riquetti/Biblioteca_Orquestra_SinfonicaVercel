@@ -1,5 +1,13 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "biblioteca/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
+    { "handle": "filesystem" },
     {
       "src": "/(.*)",
       "dest": "biblioteca/wsgi.py"
