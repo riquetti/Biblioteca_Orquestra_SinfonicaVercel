@@ -3,11 +3,7 @@
   "builds": [
     {
       "src": "vercel-build.sh",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.8"
-      }
+      "use": "@vercel/python-django"
     }
   ],
   "routes": [
@@ -15,8 +11,5 @@
       "src": "/(.*)",
       "dest": "biblioteca/wsgi.py"
     }
-  ],
-  "frameworks": {
-    "django": "4.213"
-  }
+  ]
 }
