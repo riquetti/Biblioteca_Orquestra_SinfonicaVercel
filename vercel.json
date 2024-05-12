@@ -2,12 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "biblioteca/wsgi.py",
-      "use": "@vercel/python"
+      "src": "vercel-build.sh",
+      "use": "@vercel/python-django"
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
     {
       "src": "/(.*)",
       "dest": "biblioteca/wsgi.py"
