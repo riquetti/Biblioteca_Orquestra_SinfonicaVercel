@@ -1,5 +1,9 @@
 {
-    "routes": [
-      { "src": "/(.*)", "dest": "biblioteca/wsgi.py" }
-    ]
-  }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/static/(.*)", "dest": "/static/$1" },
+    { "src": "/media/(.*)", "dest": "/media/$1" },
+    { "src": "/admin/(.*)", "dest": "http://localhost:8000/admin/$1" },
+    { "src": "/(.*)", "dest": "http://localhost:8000/$1" }
+  ]
+}
