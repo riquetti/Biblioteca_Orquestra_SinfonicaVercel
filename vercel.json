@@ -3,10 +3,18 @@
   "builds": [
     {
       "src": "biblioteca/wsgi.py",
-      "use": "@vercel/python-django"
+      "use": "@vercel/static-build",
+      "config": { "distDir": "biblioteca" }
+    },
+    {
+      "src": "biblioteca/manage.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb" }
     }
   ],
   "routes": [
+    { "src": "/static/(.*)", "dest": "biblioteca/static/$1" },
+    { "src": "/media/(.*)", "dest": "biblioteca/media/$1" },
     { "src": "/(.*)", "dest": "biblioteca/wsgi.py" }
   ]
 }
