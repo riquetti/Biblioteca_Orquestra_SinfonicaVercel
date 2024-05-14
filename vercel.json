@@ -1,6 +1,16 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "biblioteca/wsgi.py",
+      "use": "@vercel/python-django"
+    }
+  ],
   "routes": [
-    { "src": "/(.*)", "dest": "biblioteca/wsgi.py" }
+    {
+      "src": "/(.*)",
+      "dest": "biblioteca/wsgi.py"
+    }
   ]
 }
+
