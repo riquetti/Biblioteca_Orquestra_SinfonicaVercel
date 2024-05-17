@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "biblioteca/wsgi.py",
-      "use": "@vercel/python-django"
+      "use": "@vercel/python"
     }
   ],
   "routes": [
