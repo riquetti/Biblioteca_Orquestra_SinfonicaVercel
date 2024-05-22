@@ -4,7 +4,6 @@ from django import forms
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
-
 from usuarios.models import Usuario
 
 from .forms import CadastroLivro, CategoriaLivro
@@ -155,14 +154,14 @@ def cadastrar_emprestimo(request):
         nome_emprestado = request.POST.get('nome_emprestado')
         nome_emprestado_anonimo = request.POST.get('nome_emprestado_anonimo')
         livro_emprestado = request.POST.get('livro_emprestado')
-        localizacao_retirada = request.POST.get('localizacao_retirada')
+        #localizacao_retirada = request.POST.get('localizacao_retirada')
         
         if nome_emprestado_anonimo:
             emprestimo = Emprestimos(nome_emprestado_anonimo = nome_emprestado_anonimo,
-                                    livro_id = livro_emprestado, loc_retirada = localizacao_retirada )
+                                    livro_id = livro_emprestado)
         else:
             emprestimo = Emprestimos(nome_emprestado_id=nome_emprestado,
-                                    livro_id = livro_emprestado, loc_retirada = localizacao_retirada )
+                                    livro_id = livro_emprestado)
         emprestimo.save()
 
         livro = Livros.objects.get(id = livro_emprestado)

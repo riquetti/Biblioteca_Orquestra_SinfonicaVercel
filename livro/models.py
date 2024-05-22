@@ -3,7 +3,6 @@ from datetime import date
 
 from django.db import models
 from django.db.models.base import Model
-
 from usuarios.models import Usuario
 
 
@@ -57,7 +56,7 @@ class Emprestimos(models.Model):
     data_devolucao = models.DateTimeField(blank = True, null = True)
     livro = models.ForeignKey(Livros, on_delete=models.DO_NOTHING)
     avaliacao = models.CharField(max_length=1, choices=choices, null=True, blank=True)
-    localizacao_retirada = models.CharField(max_length = 100, verbose_name='Localização Retirada')
+
 
     def __str__(self) -> str:
         return f"{self.nome_emprestado} | {self.livro}"
