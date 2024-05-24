@@ -93,6 +93,7 @@
           <input style="width: 40%;" class="form-control" type="texte" value="{{livro.observacoes_gerais}}" name="observacoes_gerais">
         </p>
 
+
         <label>Categoria:</label>
         <select style="width: 20%;" class="form-control" name="categoria_id">
           
@@ -107,9 +108,10 @@
           {% endfor %}
           
 
-
+          
         </select>
 
+        
         <br>
 
         <p>
@@ -158,7 +160,7 @@
           <th scope="col" style="color: white;">Data Retirada</th>
           <th scope="col" style="color: white;">Data Devolução</th>
           <th scope="col" style="color: white;">Tempo de duração</th>
-          <th scope="col" style="color: white;">Avaliação</th>
+          <!-- <th scope="col" style="color: white;">Avaliação do estado do material</th> -->
         </tr>
       </thead>
       <tbody>
@@ -173,10 +175,10 @@
             <td style="color: white;">{{i.data_devolucao}}</td>
             <td style="color: white;">{{i.data_devolucao|mostra_duracao:i.data_emprestimo  }}</td>
             <td style="color: white;">
-            {% if i.avaliacao == None %}
+            <!-- {% if i.avaliacao == None %}
               <button onclick="avaliacao({{i.id}})" class="btn btn-info" data-toggle="modal" data-target="#exampleModal1">AVALIAR</button>
             {% else%}
-              {{i.avaliacao}}
+              {{i.avaliacao}}-->
 
             {% endif %}
             </td>
@@ -189,7 +191,7 @@
   </div>
 
 
-
+<!--
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -229,5 +231,6 @@
   }
 
 </script>
+-->
 
 {% endblock %}

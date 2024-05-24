@@ -13,7 +13,7 @@
 
     <style>
         body {
-            background-image: url('https://tvtecjundiai.com.br/news/wp-content/uploads/sites/2/2024/03/WhatsApp-Image-2024-03-13-at-09.29.38.jpeg');
+            background-image: url('https://scontent.fcpq8-1.fna.fbcdn.net/v/t39.30808-6/325147756_1539843419828431_87194455277469121_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=5xdX8WMfpwUQ7kNvgE5m9dL&_nc_ht=scontent.fcpq8-1.fna&oh=00_AYAO6uzq2oWHNhZHOQKsvk6SjXG78MTYabo7RmhGu_-mEA&oe=66558C69');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -26,7 +26,7 @@
 <body>
 
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" style="font-family: 'NomeDaFonte', sans-serif; font-size: 24px; color: #ffffff;" href="{% url 'home' %}">Biblioteca - Orquestra Sinfônica</a>
+    <a class="navbar-brand" style="font-family: 'NomeDaFonte', sans-serif; font-size: 24px; color: #ffffff;" href="{% url 'home' %}">Biblioteca - Arquivo Banda Henrique Marques</a>
 
     {% if usuario_logado %}
     <div class="dropdown show">
@@ -220,5 +220,48 @@
     }
 </script>
 
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <!-- Adicionando estilo CSS -->
+    <style>
+        body {
+            background-color: #f0f0f0; /* Exemplo de cor de fundo para melhor contraste */
+        }
+        footer {
+            background-color: #333; /* Cor de fundo do rodapé para contraste */
+            color: white; /* Cor do texto do rodapé */
+            padding: 10px; /* Espaçamento interno do rodapé */
+            text-align: center; /* Centraliza o texto no rodapé */
+            position: fixed; /* Fixa o rodapé na parte inferior da página */
+            width: 100%; /* Largura total do rodapé */
+            bottom: 0; /* Posiciona o rodapé na parte inferior */
+        }
+        footer a {
+            color: #1e90ff; /* Cor do link no rodapé */
+        }
+        footer a:hover {
+            color: #ff6347; /* Cor do link ao passar o mouse */
+        }
+        footer p {
+            display: inline-block; /* Coloca os parágrafos na mesma linha */
+            margin: 0; /* Remove margens para evitar espaçamento extra */
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo da página -->
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p><a href="https://www.facebook.com/bandahenriquemarques" target="_blank">Facebook Banda Henrique Marques.</a></p>
+        <p>Fonte da imagem: <a href="https://scontent.fcpq8-1.fna.fbcdn.net/v/t39.30808-6/325147756_1539843419828431_87194455277469121_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=5xdX8WMfpwUQ7kNvgE5m9dL&_nc_ht=scontent.fcpq8-1.fna&oh=00_AYAO6uzq2oWHNhZHOQKsvk6SjXG78MTYabo7RmhGu_-mEA&oe=66558C69" target="_blank">Banda Henrique Marques</a></p>
+    </footer>
 </body>
 </html>

@@ -5,7 +5,7 @@
 {% block 'conteudo' %}
 <style>
     .background {
-        background-image: url('https://tvtecjundiai.com.br/news/wp-content/uploads/sites/2/2024/03/WhatsApp-Image-2024-03-13-at-09.29.38.jpeg');
+        background-image: url('https://scontent.fcpq8-1.fna.fbcdn.net/v/t1.6435-9/88357384_2825219470898835_5646148652813516800_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Y9nVfzBW8z4Q7kNvgExSjBk&_nc_ht=scontent.fcpq8-1.fna&oh=00_AYCnP7JclK-v6bCfQxDqGnDFtsfKRX-CGLjAo_h4UYsT6w&oe=66772257');
         background-size: cover;
         background-position: center;
         height: 100vh;
@@ -48,8 +48,55 @@
             <input name="senha" class="form-control" type="password" placeholder="Senha...">
             <br>
             <input class="btn btn-info btn-lg" type="submit" value="Enviar">
-            <a href="{% url 'cadastro' %}" class="btn btn-warning btn-lg">Cadastro</a>
+           <!-- <a href="{% url 'cadastro' %}" class="btn btn-warning btn-lg">Cadastro</a> -->
         </form>
     </div>
 </div>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página</title>
+    <!-- Adicionando estilo CSS -->
+    <style>
+        body {
+            background-color: #f0f0f0; /* Exemplo de cor de fundo para melhor contraste */
+        }
+        footer {
+            background-color: #333; /* Cor de fundo do rodapé para contraste */
+            color: white; /* Cor do texto do rodapé */
+            padding: 10px; /* Espaçamento interno do rodapé */
+            text-align: center; /* Centraliza o texto no rodapé */
+            position: fixed; /* Fixa o rodapé na parte inferior da página */
+            width: 100%; /* Largura total do rodapé */
+            bottom: 0; /* Posiciona o rodapé na parte inferior */
+        }
+        footer a {
+            color: #1e90ff; /* Cor do link no rodapé */
+        }
+        footer a:hover {
+            color: #ff6347; /* Cor do link ao passar o mouse */
+        }
+        footer p {
+            display: inline-block; /* Coloca os parágrafos na mesma linha */
+            margin: 0; /* Remove margens para evitar espaçamento extra */
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteúdo da página -->
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p><a href="https://www.facebook.com/bandahenriquemarques" target="_blank">Facebook Banda Henrique Marques.</a></p>
+        <p>Fonte da imagem: <a href="https://scontent.fcpq8-1.fna.fbcdn.net/v/t1.6435-9/88357384_2825219470898835_5646148652813516800_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Y9nVfzBW8z4Q7kNvgExSjBk&_nc_ht=scontent.fcpq8-1.fna&oh=00_AYCnP7JclK-v6bCfQxDqGnDFtsfKRX-CGLjAo_h4UYsT6w&oe=66772257" target="_blank">Banda Henrique Marques</a></p>
+    </footer>
+</body>
+</html>
+
+
+
+
 {% endblock %}
